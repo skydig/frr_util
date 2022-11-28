@@ -1,0 +1,46 @@
+[package ]
+name = "frr_lib"
+version = "0.1.6"
+edition = "2021"
+license = "MIT"
+#repository = "https://github.com/kolapapa/mini-telnet"
+description = "Asynchronous minimal telnet library"
+keywords = ["tokio", "telnet"]
+categories = ["network-programming", "asynchronous"]
+
+[lib]
+name = "frr_util"
+path = "src/lib.rs"
+crate-type = ["cdylib", "rlib"]
+#crate-type = ["cdylib"]
+
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bytes = "1.1.0"
+futures = "0.3.21"
+thiserror = "1.0.30"
+tokio = { version = "1.17.0", features = ["rt","time","rt-multi-thread"] }
+tokio-util = { version = "0.7.0", features = ["codec"] }
+encoding = "0.2.33"
+rtnetlink = "0.9.1"
+ipnetwork = "0.18.0"
+ipaddress = "0.1.2"
+libc = "0.2.121"
+subprocess = "0.2.8"
+netlink-packet-route = "0.11"
+netdevice = "0.1.1"
+ethtool = "0.2.2"
+[dev-dependencies]
+tokio = { version = "1.17.0", features = ["rt", "time","rt-multi-thread"] }
+#rtnetlink = "0.9.1"
+
+#[[example]]
+#name = "simple"
+
+#[features]
+#default = [target-arch="aarch64"]
+[profile.release]
+lto=true

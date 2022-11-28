@@ -1,0 +1,28 @@
+# The language to output bindings in
+#
+# possible values: "C", "C++", "Cython"
+#
+# default: "C++"
+language = "C"
+
+# Whether to make a C header C++ compatible.
+# These will wrap generated functions into a `extern "C"` block, e.g.
+#
+# #ifdef __cplusplus
+# extern "C" {
+# #endif // __cplusplus
+#
+# // Generated functions.
+#
+# #ifdef __cplusplus
+# } // extern "C"
+# #endif // __cplusplus
+#
+# If the language is not C this option won't have any effect.
+#
+# default: false
+cpp_compat = true 
+
+documentation = true
+#includes = ["frr_ospf.h"]
+
